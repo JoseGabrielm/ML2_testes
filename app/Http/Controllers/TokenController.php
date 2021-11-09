@@ -34,7 +34,7 @@ class TokenController extends Controller
 
         $appId = '3020890241133766';
         $secretKey = 'DS7Nr3q1JgZhaMdu6HCgdbsA4LGKgp6i';
-        $redirectURI = 'http://localhost:8000/public/autorizado.php';
+        $redirectURI = 'https://supreme.ind.br/ml2_testes/public/autorizado.php';
         $siteId = 'MLB';
 
 
@@ -56,8 +56,7 @@ class TokenController extends Controller
                     $_SESSION['refresh_token'] = $user['body']->refresh_token;
                     //echo 'Novo token foi gerado' . '<br/>';
                 } catch (Exception $e) {
-                    $e->getMessage();
-                    dd($e);
+                    
                     // Apagar valores do token
                     $_SESSION['access_token'] = "";
                     $_SESSION['expires_in'] = "";
@@ -83,8 +82,7 @@ class TokenController extends Controller
                         $_SESSION['refresh_token'] = $refresh['body']->refresh_token;
                         //echo 'O token foi renovado' . '<br/>';
                     } catch (Exception $e) {
-                        $e->getMessage();
-                        dd($e);
+                        
                         $_SESSION['access_token'] = "";
                         $_SESSION['expires_in'] = "";
                         $_SESSION['refresh_token'] = "";
@@ -104,7 +102,7 @@ class TokenController extends Controller
             //echo'<br/>';
             $token = $_SESSION["access_token"];
             $params = array("token" => $token);
-            $auto_uri = "http://localhost:8000/public/ok?".http_build_query($params);
+            $auto_uri = "http://ml2_testes/public/ok?".http_build_query($params);
             return view('token.ok', [ 'auto_uri' => $auto_uri ]);
 
         } else {
