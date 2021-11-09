@@ -2,7 +2,7 @@
 
 use App\Http\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MeliController;
+
 use App\Http\Controllers\TokenController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\PerguntasController;
