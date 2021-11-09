@@ -9,6 +9,6 @@ echo 'code redirecionado :' . $code . '<br>';
 
 // Depois a pagina é redirecionada para com o code para gerar o token
 
-header("Location: http://localhost:8000/public/token?code=$code");
+header("Location: http://supreme.ind.br/ml2_testes/public/token?code=$code");
 
 ?>

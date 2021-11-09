@@ -1,11 +1,13 @@
 <?php
 
+
 use App\Http\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TokenController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\PerguntasController;
+use App\Http\Controllers\LeitorPedidos;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +64,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/celeste/novo', [CelesteController::class, 'celeste'])->name('celeste.novo');
     Route::get('/celeste/importarML', [CelesteController::class, 'celeste'])->name('celeste.importarML');
     Route::get('/celeste', [CelesteController::class, 'celeste'])->name('celeste.excluir');
+
+    route::get('/ler' , [LeitorPedidos::class, 'recebe'])->name('leitor.ler');
+
 
     
     // Teste contador
