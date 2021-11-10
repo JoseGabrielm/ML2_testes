@@ -18,20 +18,11 @@ class LeitorPedidosController extends Controller
 
 public function recebe (Request $request){
 
-    $nome = $request->file->getClientOriginalName('file');
-
-    $parser = new \Smalot\PdfParser\Parser();
-    $nome = str_replace(' ', '' , $nome);
-
-    //dd((asset("storage/") . "/" . $nome));
-    $pdf = $parser->parseFile(asset("storage") . "/" . $nome);
-    
-    
+$mydir = '../teste';
+$myfiles = scandir($mydir);
 
 
-    $text = $pdf->getText();
-
-    echo $text;
+print_r($myfiles);
       
 
 
