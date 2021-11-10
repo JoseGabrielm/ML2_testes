@@ -2,30 +2,79 @@
 
 namespace App\Http\Controllers;
 
-include 'vendor/autoload.php';
 
 
 
-$parser = new \Smalot\Pdfparser\Parser();
+use Illuminate\Http\Request;
 
 
-class LeitorPedidos extends Controller
+//$parser = new \Smalot\Pdfparser\Parser();
+
+
+class LeitorPedidosController extends Controller
 {
 
  
 
-public function recebe ($parser){
+public function recebe (Request $request){
 
-    //recebe os arquivos
-   $pdf =  $parser->parsefile('/**.pdf');
-   //verifica o tipo e tamanho do arquivo
-   $pdf->validate([
-    'file' => 'required|mimes:pdf|max:2048'
-    ]);
-        
-        
+    $nome = $request->file->getClientOriginalName('file');
+
+    $parser = new \Smalot\PdfParser\Parser();
+    $nome = str_replace(' ', '' , $nome);
+
+    //dd((asset("storage/") . "/" . $nome));
+    $pdf = $parser->parseFile(asset("storage") . "/" . $nome);
+    
+    
 
 
+    $text = $pdf->getText();
+
+    echo $text;
+      
+
+
+
+
+
+
+
+
+
+
+    //funciona porem escolhe apenas um arquivo
+
+
+    //$nome = $request->file->getClientOriginalName('file');
+    //$arquivo = $request->file('file');
+    
+    //$estado = $arquivo->isValid(); //verifica estado do arquivo
+
+    //if ($estado != 'true'){
+
+
+        //echo "erro. Arquivo não é válido";
+       
+
+   // } else {
+
+      //  $pedidos = null;
+
+      //  return view('pedidos.primeiro', ['pedidos' => $pedidos]);
+
+   // }
+
+
+    
+   
+
+
+
+
+
+
+       
 }
 public function read ($pdf){
 
