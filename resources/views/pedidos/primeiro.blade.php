@@ -69,6 +69,13 @@
                                     Apagar Pedidos
                                 </button>
                             </div>
+
+                            <div class="row m-5 py-8">
+                                <button type="file id="edit-file" name="files[file]" size="60" class="form-file"">
+                                    inserir pedidos
+                                </button>
+                            </div>
+
                         </div>
 
                         <br />
