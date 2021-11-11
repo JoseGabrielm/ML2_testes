@@ -43,7 +43,7 @@ class PedidosController extends Controller
 
     public function incluir(Request $request)
     {
-        //dd($request);
+        dd($request);
         //consulta para atualizar import no banco de dados
         $pedido = $request->pedido;
         $usuario = Auth::user()->name;

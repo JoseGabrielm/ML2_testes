@@ -60,7 +60,7 @@
                             </div>
 
                             <!-- O tipo de encoding de dados, enctype, DEVE ser especificado abaixo -->
-                            <form action="{{ route('leitor.ler') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('leitor.ler') }}" method="post" enctype="multipart/form-data" webkitdirectory multiple>
                                 @csrf
                                 <input type="file" name="file">
                                 ...
