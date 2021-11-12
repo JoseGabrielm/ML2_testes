@@ -31,8 +31,9 @@
                                 </thead>
                                 <tbody>
                                     @foreach($pedidos as $pedido)
+                                    <?php //dd($pedidos)?>
                                     <tr class="grid grid-cols-12 gap-8 ">
-                                        <td class="col-span-3 text-3xl text-right" >
+                                        <td class="col-span-3 text-3xl text-right">
                                             {{ $pedido->pedido }}
                                         </td>
                                         <td class="col-span-2 ml-20">
@@ -45,6 +46,17 @@
                                 </tbody>
                             </table>
                         </div>
+
+
+                        <form action="{{ route('leitor.ler') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="file">
+                            ...
+
+                            <button type="submit">Selecionar arquivos</button>
+
+                            <p>utilize <strong>APENAS</strong> arquivos salvos utilizando "Salvar como PDF" </p>
+
 
 
                                 <div class="row m-5 py-8">
@@ -60,12 +72,8 @@
                             </div>
 
                             <!-- O tipo de encoding de dados, enctype, DEVE ser especificado abaixo -->
-                            <form action="{{ route('leitor.ler') }}" method="post" enctype="multipart/form-data" webkitdirectory multiple>
-                                @csrf
-                                <input type="file" name="file">
-                                ...
-
-                                <button type="submit">Selecionar arquivos</button>
+                            
+                            
                             </form>
 
                         </div>

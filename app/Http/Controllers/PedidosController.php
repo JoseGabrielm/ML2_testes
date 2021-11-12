@@ -43,14 +43,14 @@ class PedidosController extends Controller
 
     public function incluir(Request $request)
     {
-        dd($request);
-        //consulta para atualizar import no banco de dados
-        $pedido = $request->pedido;
+        
+        
+        $codigo = $request->codigo;
         $usuario = Auth::user()->name;
-        DB::insert('insert into tbimport (pedido, usuario) values (?, ?)', [$pedido, $usuario]);
-        $pedidos = $this->tbimport->where('usuario', $usuario)->orderby('id', 'desc')->get();
-        //dd($pedidos);
-	    return view('pedidos.primeiro', ['pedidos' => $pedidos]);
+        DB::insert('insert into tbimport (pedido, usuario) values (?, ?)', [$codigo, $usuario]);
+        $codigo = $this->tbimport->where('usuario', $usuario)->orderby('id', 'desc')->get();
+        //dd($codigo);
+	    return view('pedidos.primeiro', ['pedidos' => $codigo]);
     }
 
 

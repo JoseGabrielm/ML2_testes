@@ -57,7 +57,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pedidos/excluir', [PedidosController::class, 'excluir'])->name('pedidos.excluir');
     Route::get('/pedidos/limpar', [PedidosController::class, 'limpar'])->name('pedidos.limpar');
     Route::get('/pedidos/importar', [PedidosController::class, 'importar'])->name('pedidos.importar');
-    Route::put('/pedidos/incluir', [PedidosController::class, 'incluir'])->name('pedidos.incluir');
+    Route::get('/pedidos/incluir', [PedidosController::class, 'incluir'])->name('pedidos.incluir');
 
     Route::get('/celeste', [CelesteController::class, 'celeste'])->name('celeste.inicio');
     Route::get('/celeste/atualizar', [CelesteController::class, 'celeste'])->name('celeste.atualizar');
@@ -65,7 +65,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/celeste/importarML', [CelesteController::class, 'celeste'])->name('celeste.importarML');
     Route::get('/celeste', [CelesteController::class, 'celeste'])->name('celeste.excluir');
 
-    route::post('/ler' , [LeitorPedidosController::class, 'recebe'])->name('leitor.ler');
+    route::post('/ler' , [LeitorPedidosController::class, 'PdfRecebe'])->name('leitor.ler');
 
 
     
