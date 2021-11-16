@@ -31,7 +31,6 @@
                                 </thead>
                                 <tbody>
                                     @foreach($pedidos as $pedido)
-                                    <?php //dd($pedidos)?>
                                     <tr class="grid grid-cols-12 gap-8 ">
                                         <td class="col-span-3 text-3xl text-right">
                                             {{ $pedido->pedido }}
@@ -52,26 +51,25 @@
                             @csrf
                             <input type="file" name="file">
                             ...
-
-                            <button type="submit">Selecionar arquivos</button>
-
                             <p>utilize <strong>APENAS</strong> arquivos salvos utilizando "Salvar como PDF" </p>
-
-
+                            <div class="row m-5 py-8">
+                            <button type="submit" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-gray-500 focus:outline-none focus:grey-500">
+                                Confirmar arquivos
+                            </button>
+                            </div>
+                            
 
                                 <div class="row m-5 py-8">
-                                    <button type="button" onclick="window.location=' {{ route("pedidos.importar") }} '" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-300 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500" >
+                                    <button type="button" onclick="window.location=' {{ route("pedidos.importar") }} '" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-300 rounded-md hover:bg-gray-500 focus:outline-none focus:bg-blue-500" >
                                         Importar Pedidos
                                     </button>
                                 </div>
 
                             <div class="row m-5 py-8">
-                                <button type="button" onclick="window.location=' {{ route("pedidos.limpar") }} '" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500" >
+                                <button type="button" onclick="window.location=' {{ route("pedidos.limpar") }} '" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-gray-500 focus:outline-none focus:bg-blue-500" >
                                     Apagar Pedidos
                                 </button>
                             </div>
-
-                            <!-- O tipo de encoding de dados, enctype, DEVE ser especificado abaixo -->
                             
                             
                             </form>
@@ -83,8 +81,6 @@
                     </div>
                 </div>
 
-
-                <!-- conteudo do corpo principal -->
             </div>
         </div>
     </div>
