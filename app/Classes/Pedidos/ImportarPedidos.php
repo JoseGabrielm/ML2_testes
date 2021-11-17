@@ -254,28 +254,6 @@ class ImportarPedidos
 
         var_dump($listaPedido);
         
-        
-        
-        $arquivo = "pedido";
-
-        foreach ($listaPedido as $pedido) {
-
-            
-            
-        }
-
-
-        //inserir no banco de dados
-        //e se já existir exibir marcação
-
-
-       
-        //file_put_contents($arquivo, $fp);
-
-        // Enviando o CSV para download
-        header('Content-type: text/csv; charset=UTF-8; header=present');
-        header('Content-Disposition: attachment; filename="arquivo.csv"');
-        readfile($arquivo);
     }
 
 
