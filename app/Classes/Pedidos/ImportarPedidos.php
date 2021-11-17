@@ -252,7 +252,7 @@ class ImportarPedidos
         //Exportar arquivo para csv
         
 
-        var_dump($listaPedido);
+        dd($listaPedido);
         
     }
 

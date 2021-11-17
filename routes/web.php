@@ -1,9 +1,8 @@
 <?php
 
-
+use App\Classes\Cargas\Cargas;
 use App\Http\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\TokenController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\PerguntasController;
@@ -68,7 +67,9 @@ Route::middleware(['auth'])->group(function () {
     route::post('/ler' , [LeitorPedidosController::class, 'PdfRecebe'])->name('leitor.ler');
 
 
-    
+    Route::get('/teste', [Cargas::class, 'exibeCarga'])->name('cargas.exibir');
+
+
     // Teste contador
     Route::get('/contador', Counter::class);
 
