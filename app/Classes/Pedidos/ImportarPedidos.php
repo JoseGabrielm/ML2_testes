@@ -78,6 +78,7 @@ class ImportarPedidos
                     $value_name = $importado->order_items[0]->item->variation_attributes[0]->value_name ?: "";
                     }else{
                         $value_name = "";
+                        
                     }
                     $quantity = $importado->order_items[0]->quantity ?: 0;
                     $unit_price = $importado->order_items[0]->unit_price ?: 0;

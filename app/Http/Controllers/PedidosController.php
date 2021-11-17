@@ -66,7 +66,7 @@ class PedidosController extends Controller
         //dd($request->id);
         $importarPedidos = new ImportarPedidos();
         $retornoImportar = $importarPedidos->importar();
-        dd($retornoImportar);
+        //dd($retornoImportar);
         //return view('perguntas.responder_gerar', ['retorno_gerar' => $retornoImportar]);
     }
 
