@@ -17,6 +17,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

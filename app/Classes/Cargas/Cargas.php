@@ -12,6 +12,7 @@ public function exibeCarga(){
     $cargas = $conn->table('tbcarga')
                     ->select(DB::raw('*'))
                     ->where('obs', '>','Thainá')
+                    ->limit('30')
                     ->get();
 
 
