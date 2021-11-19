@@ -2,11 +2,13 @@
 
 namespace App\Classes\Cargas;
 
+use App\Http\Controllers\CargasController;
+
 use Illuminate\Support\Facades\DB;
 
 class Cargas{
 
-public function exibeCarga(){
+public function consultCargas(){
 
     $conn = DB::connection('mysql2');
     $cargas = $conn->table('tbcarga')
@@ -16,12 +18,11 @@ public function exibeCarga(){
                     ->get();
 
 
-    return view('cargas/cargas',  ['cargas' => $cargas]);
-}
+return ($cargas);
 
 }
 
 
-
+}
 
 ?>
