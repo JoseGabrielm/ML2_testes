@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Classes\Cargas\Cargas;
+use Illuminate\Http\Request;
 
-use Illuminate\View\Factory as View;
 
 class CargasController extends Controller
 {
@@ -27,12 +27,44 @@ class CargasController extends Controller
 
 
 
-    public function viewCargas($listCargas, View $view){
+    public function formCargas(){
 
-        //vai retornar para a view que chamou
-        dd($listCargas);
+
+
+        return view('cargas.formCarga');
+    }
+
+
+
+
+
+    public function newCargas(Request $request){
+
+
+        $formCad = $request -> input('dataCad');
+        $formCad = $request -> input('destinoCad');
+        $formCad = $request -> input('obsCad');
+        $formCad = $request -> input('transpCad');
+
+        dd($formCad);
+
+        if ($formCad === null){
+
+            dd('erro');
+
+        }else{
+
+            dd($formCad);
+
+
+        }
+
+
+
 
     }
+
+
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\Cargas\Cargas;
+
 use App\Http\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokenController;
@@ -68,6 +68,8 @@ Route::middleware(['auth'])->group(function () {
     route::post('/ler' , [LeitorPedidosController::class, 'PdfRecebe'])->name('leitor.ler');
 
     route::get('/cargas' , [CargasController::class, 'getCargas'])->name('cargas.exibir');
+    route::get('/cargas/form' , [CargasController::class, 'formCargas'])->name('cargas.form');
+    route::post('/cargas/cadastrar' , [CargasController::class, 'newCargas'])->name('cargas.cadastrar');
 
 
 

@@ -23,6 +23,34 @@ return ($cargas);
 }
 
 
+public function formCargas(){
+
+
+
+
+    return view('cargas.form');
+    }
+
+
+
+
+
+
+
+public function addCarga(){
+
+$conn = DB::connection('mysql2');
+$cargas = $conn->insert('');
+
+
+
+
+
+}
+
+
+
+
 }
 
 ?>
