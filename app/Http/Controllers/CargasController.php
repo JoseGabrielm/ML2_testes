@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Classes\Cargas\Cargas;
+use Hamcrest\Arrays\IsArray;
 use Illuminate\Http\Request;
+
 
 
 class CargasController extends Controller
@@ -41,26 +43,15 @@ class CargasController extends Controller
     public function newCargas(Request $request){
 
 
-        $formCad = $request -> input('dataCad');
-        $formCad = $request -> input('destinoCad');
-        $formCad = $request -> input('obsCad');
-        $formCad = $request -> input('transpCad');
+        $dataCad = $request -> input('dataCad');
+        $destinoCad = $request -> input('destinoCad');
+        $obsCad = $request -> input('obsCad');
+        $transCad = $request -> input('transCad');
 
-        dd($formCad);
-
-        if ($formCad === null){
-
-            dd('erro');
-
-        }else{
-
-            dd($formCad);
-
-
-        }
-
-
-
+        //dd($dataCad);
+              //dd('certo');
+        $insert = new Cargas();
+        $insert -> addCarga($dataCad, $destinoCad , $obsCad, $transCad);
 
     }
 

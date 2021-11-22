@@ -14,7 +14,7 @@ public function consultCargas(){
     $cargas = $conn->table('tbcarga')
                     ->select(DB::raw('*'))
                     ->where('obs', '>','Thainá')
-                    ->limit('30')
+                    ->limit('10')
                     ->get();
 
 
@@ -28,22 +28,26 @@ public function formCargas(){
 
 
 
-    return view('cargas.form');
+
     }
 
 
+public function addCarga($dataCad, $destinoCad , $obsCad, $transCad){
+    //dd('chegou');
 
 
 
 
+$conn = DB::connection('mysql2')->table('tbcarga')->insert([
 
-public function addCarga(){
+    'idCarga' => 1,
+    'destino' => $destinoCad,
+    'data' => '2016/03/05',
+    'obs' => $obsCad,
+    'tbtransportadora_idTransportadora' => 1
 
-$conn = DB::connection('mysql2');
-$cargas = $conn->insert('');
-
-
-
+]);
+dd('casdastrou');
 
 
 }
